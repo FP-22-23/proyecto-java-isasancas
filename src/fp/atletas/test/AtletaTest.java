@@ -46,7 +46,7 @@ public class AtletaTest {
 		System.out.println("Representación como cadena del atleta 1:");
 		System.out.println(at.toString());
 		
-		Atleta at4 = new Atleta("","M",28,184,85.0,"Finland",Season.WINTER,
+		Atleta at4 = new Atleta(" ","M",28,184,85.0,"Finland",Season.WINTER,
 				"Ice Hockey","Ice Hockey Men's Ice Hockey",Medal.BRONZE,LocalDate.now(),"paddle/swimming/tennis", 
 				olimp);
 		

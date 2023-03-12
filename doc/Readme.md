@@ -53,7 +53,7 @@ Representa un atleta en concreto.
 - _date_: consutable y modificable. De tipo LocalDate, representa la fecha de apertura de los Juegos.
 - _other_sports_: consultable. De tipo List<String>, representa los otros deportes que practica el atleta.
 - _olimp_: consultable. De tipo Olimpiadas, es un tipo auxiliar que representa los datos de la olimpiadas ese año, 
-concretamente la ciudad, el nombre de los juegos y el comité olímpico que los organiza.
+concretamente la ciudad, el nombre de los juegos y el Comité Olímpico que los organiza.
 
 **Constructores**
 - C1: Crea un objeto de tipo Atleta a partir de los siguientes parámetros: ```String name, String team, 
