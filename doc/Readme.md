@@ -68,7 +68,7 @@ String event, Medal medal, LocalDate date, String other_sports```.
 **Otras operaciones**:
 - _Double getIMC()_: es una propiedad derivada que devuelve el Índice de Masa Corporal a partir del peso y la altura.
 
-####Tipos auxiliares
+#### Tipos auxiliares
 
 - Season, enumerado. Puede ser Summer o Winter.
 - Medal, enumerado. Puede ser Gold, Silver o Bronze.
