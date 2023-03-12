@@ -97,6 +97,7 @@ public class Atleta implements Comparable<Atleta> {
 		this.olimp = olimp;
 	}
 
+	//Parseos
 	private Boolean parseaSex(String sex) {
 		Boolean res = false;
 		if (sex.equals("M")) {

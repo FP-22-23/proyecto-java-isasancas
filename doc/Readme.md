@@ -25,14 +25,11 @@ del dataset original, y dos, date y other_sports, se han generado de forma aleat
 * **height**: consultable y modificable. De tipo integer, representa la altura de los atletas en centímetros. Si no se conoce, aparece como 0.
 * **weight**: consultable y modificable. De tipo float, representa el peso de los atletas en kilogramos. Si no se conoce, aparece como 0.
 * **team**: consultable y modificable. De tipo string, representa el nombre del equipo al que pertenecen los atletas.
-* **noc**:
-* **games**:
 * **season**: consultable y modificable. De tipo enum, representa la estación en la que se celebraron los Juegos. Puede ser Summer o Winter.
-* **city**:
 * **sport**: consultable y modificable. De tipo string, representa el deporte en el que participó ese atleta.
 * **event**: consultable y modificable. De tipo string, representa el nombre de la prueba olímpica.
 * **medal**: consultable y modificable. De tipo enum, representa la medalla que ganó ese atleta. Puede ser Gold, Silver o Bronze.
-* **date**: 
+* **date**: consultable y modificable. De tipo LocalDate, representa el año en el que se llevaron a cabo los Juegos.
 * **other_sports**: consultable y modificable. De tipo List
 
 ## Tipos implementados
