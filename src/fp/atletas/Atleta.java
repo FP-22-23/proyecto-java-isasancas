@@ -28,6 +28,9 @@ public class Atleta implements Comparable<Atleta> {
 	
 	
 	//Propiedad derivada: obtener el Índice de Masa Corporal en función del peso y la altura.
+	/**
+	 * @return El Indice de Masa Corporal del atleta. Se calcula a partir de la altura y el peso.
+	 */
 	public Double getIMC() {
 		Double res = getWeight()/((getHeight()/100)^2);
 		return res;
@@ -42,12 +45,11 @@ public class Atleta implements Comparable<Atleta> {
 	
 	//Restricción 2
 	private void checkDate(LocalDate date) {
-		LocalDate f1 = LocalDate.of(1900, 5, 14);
-		LocalDate f2 = LocalDate.now();
+		LocalDate f1 = LocalDate.of(1900, 1, 1);
+		LocalDate f2 = LocalDate.of(2017, 1, 1);
 		if (date.isBefore(f1) || date.isAfter(f2)) {
 		throw new IllegalArgumentException(
-		"La fecha debe estar comprendida entre "
-		+ "el 14/5/1900 y la fecha actual");
+		"La fecha debe estar comprendida entre el 1/1/1900 y el 1/1/2017." + date.toString());
 		}
 	}
 	
@@ -73,6 +75,25 @@ public class Atleta implements Comparable<Atleta> {
 		this.other_sports = parseaOtherSports(other_sports);
 		this.olimp = null;
 	}
+	
+	/**
+	 * @param name Indica el nombre del atleta. 
+	 * @param sex Indica el sexo del atleta. Si es Masculino asociamos true y si es femenino asociamos false.
+	 * @param age Indica la edad del atleta. Si no se conoce, aparece un 0.
+	 * @param height Indica la altura del atleta. Si no se conoce, aparece un 0.
+	 * @param weight Indica el peso del atleta. Si no se conoce, aparece un 0.
+	 * @param team Indica el equipo al que pertenece el atleta. 
+	 * @param season Indica la estacion de los Juegos. Puede ser Summer o Winter.
+	 * @param sport Indica en que deporte ha participado el atleta.
+	 * @param event Indica en que evento en concreto ha participado el atleta dentro de su deporte.
+	 * @param medal Indica la medalla que ha ganado el atleta en ese evento. Puede ser bronze, silver o gold.
+	 * @param date Indica la fecha de apertura de los juegos. Ha sido generado aleatoriamente.
+	 * @param other_sports Indica otros deportes que practica el atleta. Ha sido generado aleatoriamente.
+	 * @param olimp Indica informacion sobre los Juegos en los que ha participado el atleta, mas concretamente las siglas del Comite Olimpico, 
+	 * el nombre de los Juegos y la ciudad.
+	 * @throws IllegalArgumentException si el nombre esta vacio.
+	 * @throws IllegalArgumentException si la fecha no esta entre el 1/1/1900 y el 1/1/2017.
+	 */
 	
 	//Constructor 2
 	public Atleta(String name, String sex, Integer age, Integer height, Double weight, String team, Season season,
@@ -112,14 +133,20 @@ public class Atleta implements Comparable<Atleta> {
 	}
 
 	//Getters and setters
+	/**
+	 * @return El nombre del atleta.
+	 */
 	public String getName() {
 		return name;
 	}
-
+	
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/**
+	 * @return El sexo del atleta.
+	 */
 	public String getSex() {
 		String res = "M";
 		if(sex == false) {
@@ -132,6 +159,9 @@ public class Atleta implements Comparable<Atleta> {
 		this.sex = sex;
 	}
 
+	/**
+	 * @return La edad del atleta
+	 */
 	public Integer getAge() {
 		return age;
 	}
@@ -140,6 +170,9 @@ public class Atleta implements Comparable<Atleta> {
 		this.age = age;
 	}
 
+	/**
+	 * @return La altura del atleta.
+	 */
 	public Integer getHeight() {
 		return height;
 	}
@@ -147,7 +180,10 @@ public class Atleta implements Comparable<Atleta> {
 	public void setHeight(Integer height) {
 		this.height = height;
 	}
-
+	
+	/**
+	 * @return El peso del atleta.
+	 */
 	public Double getWeight() {
 		return weight;
 	}
@@ -156,6 +192,9 @@ public class Atleta implements Comparable<Atleta> {
 		this.weight = weight;
 	}
 
+	/**
+	 * @return El equipo del atleta.
+	 */
 	public String getTeam() {
 		return team;
 	}
@@ -164,6 +203,9 @@ public class Atleta implements Comparable<Atleta> {
 		this.team = team;
 	}
 
+	/**
+	 * @return La estacion de los Juegos.
+	 */
 	public Season getSeason() {
 		return season;
 	}
@@ -172,6 +214,9 @@ public class Atleta implements Comparable<Atleta> {
 		this.season = season;
 	}
 
+	/**
+	 * @return El deporte que practica el atleta.
+	 */
 	public String getSport() {
 		return sport;
 	}
@@ -180,6 +225,9 @@ public class Atleta implements Comparable<Atleta> {
 		this.sport = sport;
 	}
 
+	/**
+	 * @return El evento en el que participa el atleta.
+	 */
 	public String getEvent() {
 		return event;
 	}
@@ -188,6 +236,9 @@ public class Atleta implements Comparable<Atleta> {
 		this.event = event;
 	}
 
+	/**
+	 * @return La medalla que gano el atleta.
+	 */
 	public Medal getMedal() {
 		return medal;
 	}
@@ -196,6 +247,9 @@ public class Atleta implements Comparable<Atleta> {
 		this.medal = medal;
 	}
 
+	/**
+	 * @return La fecha de apertura de los Juegos.
+	 */
 	public LocalDate getDate() {
 		return date;
 	}
@@ -204,10 +258,16 @@ public class Atleta implements Comparable<Atleta> {
 		this.date = date;
 	}
 
+	/**
+	 * @return Otro deportes que practica el atleta.
+	 */
 	public List<String> getOther_sports() {
 		return other_sports;
 	}
 
+	/**
+	 * @return Informacion de los Juegos.
+	 */
 	public Olimpiadas getOlimp() {
 		return olimp;
 	}
@@ -235,6 +295,9 @@ public class Atleta implements Comparable<Atleta> {
 	}
 
 	//Criterio de orden natural
+	/**
+	 * @return Los atletas se ordenan por nombre y evento.
+	 */
 	public int compareTo(Atleta a) {
 		
 		int r = getName().compareTo(a.getName());

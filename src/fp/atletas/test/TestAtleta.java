@@ -7,14 +7,14 @@ import fp.utiles.Medal;
 import fp.utiles.Olimpiadas;
 import fp.utiles.Season;
 
-public class AtletaTest {
+public class TestAtleta {
 
 	public static void main(String[] args) {
 		
 		Olimpiadas olimp = new Olimpiadas("FIN","2014 Winter","Sochi");
 		
-		Atleta at = new Atleta("Juhamatti Tapio Aaltonen","M",28,184,85.0,"Finland",Season.WINTER,
-				"Ice Hockey","Ice Hockey Men's Ice Hockey",Medal.BRONZE, LocalDate.now(),"paddle/swimming/tennis", 
+		Atleta at = new Atleta("Juhamatti Tapio Aaltonen","M",28,184,85.0,"Finland",Season.Winter,
+				"Ice Hockey","Ice Hockey Men's Ice Hockey",Medal.Bronze, LocalDate.now(),"paddle/swimming/tennis", 
 				olimp);
 		
 		System.out.println("Atleta 1:");
@@ -24,15 +24,15 @@ public class AtletaTest {
 		System.out.println("Sexo del atleta 1:");
 		System.out.println(at.getSex());
 
-		Atleta at2 = new Atleta("Juhamatti Tapio Aaltonen","M",28,184,85.0,"Finland",Season.WINTER,
-				"Ice Hockey","Ice Hockey Men's Ice Hockey",Medal.BRONZE,LocalDate.now(),"paddle/swimming/tennis", 
+		Atleta at2 = new Atleta("Juhamatti Tapio Aaltonen","M",28,184,85.0,"Finland",Season.Winter,
+				"Ice Hockey","Ice Hockey Men's Ice Hockey",Medal.Bronze,LocalDate.now(),"paddle/swimming/tennis", 
 				olimp);
 		
 		System.out.println("¿Son el atleta 1 y el atleta 2 iguales?");
 		System.out.println(at.equals(at2));
 		
-		Atleta at3 = new Atleta("Kjetil Andr Aamodt","M",28,184,85.0,"Finland",Season.WINTER,
-				"Ice Hockey","Ice Hockey Men's Ice Hockey",Medal.BRONZE,LocalDate.now(),"paddle/swimming/tennis", 
+		Atleta at3 = new Atleta("Kjetil Andr Aamodt","M",28,184,85.0,"Finland",Season.Winter,
+				"Ice Hockey","Ice Hockey Men's Ice Hockey",Medal.Bronze,LocalDate.now(),"paddle/swimming/tennis", 
 				olimp);
 		
 		System.out.println("¿Son el atleta 2 y el atleta 3 iguales?");
@@ -46,8 +46,8 @@ public class AtletaTest {
 		System.out.println("Representación como cadena del atleta 1:");
 		System.out.println(at.toString());
 		
-		Atleta at4 = new Atleta("","M",28,184,85.0,"Finland",Season.WINTER,
-				"Ice Hockey","Ice Hockey Men's Ice Hockey",Medal.BRONZE,LocalDate.now(),"paddle/swimming/tennis", 
+		Atleta at4 = new Atleta("","M",28,184,85.0,"Finland",Season.Winter,
+				"Ice Hockey","Ice Hockey Men's Ice Hockey",Medal.Bronze,LocalDate.now(),"paddle/swimming/tennis", 
 				olimp);
 		
 		//Aquí salta la excepción ya que el nombre no puede estar vacío

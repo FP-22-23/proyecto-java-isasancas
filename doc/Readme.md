@@ -23,22 +23,24 @@ del dataset original, y dos, date y other_sports, se han generado de forma aleat
 * **sex**: consultable y modificable. De tipo boolean, representa el sexo del atleta, masculino o femenino. La asignación es M (True) y F (False).
 * **age**: consultable y modificable. De tipo integer, representa la edad del atleta. Si no se conoce, aparece como 0.
 * **height**: consultable y modificable. De tipo integer, representa la altura de los atletas en centímetros. Si no se conoce, aparece como 0.
-* **weight**: consultable y modificable. De tipo float, representa el peso de los atletas en kilogramos. Si no se conoce, aparece como 0.
+* **weight**: consultable y modificable. De tipo double, representa el peso de los atletas en kilogramos. Si no se conoce, aparece como 0.
 * **team**: consultable y modificable. De tipo string, representa el nombre del equipo al que pertenecen los atletas.
+* **noc**: consultable y modificable. De tipo string, representa las siglas del Comité Olímpico que organiza los juegos.
+* **games**: consultable y modificable. De tipo string, representa el nombre de dichos Juegos.
 * **season**: consultable y modificable. De tipo enum, representa la estación en la que se celebraron los Juegos. Puede ser Summer o Winter.
+* **city**: consultable y modificable. De tipo String, representa la ciudad donde se celebraron los Juegos.
 * **sport**: consultable y modificable. De tipo string, representa el deporte en el que participó ese atleta.
 * **event**: consultable y modificable. De tipo string, representa el nombre de la prueba olímpica.
 * **medal**: consultable y modificable. De tipo enum, representa la medalla que ganó ese atleta. Puede ser Gold, Silver o Bronze.
 * **date**: consultable y modificable. De tipo LocalDate, representa el año en el que se llevaron a cabo los Juegos.
-* **other_sports**: consultable y modificable. De tipo List
+* **other_sports**: consultable y modificable. De tipo List, representa otros deportes que practica el atleta.
 
 ## Tipos implementados
 Los tipos que se han implementado en el proyecto son los siguientes:
 
 ### Tipo base - Atleta
-Representa un atleta en concreto.
+Representa un atleta en concreto. **Propiedades**:
 
-**Propiedades**
 - _name_: consultable y modificable. De tipo string, representa el nombre del atleta.
 - _sex_: consultable y modificable. De tipo boolean, representa el sexo del atleta, masculino o femenino. La asignación es M (True) y F (False).
 - _age_: consultable y modificable. De tipo integer, representa la edad del atleta. Si no se conoce, aparece como 0.
@@ -58,8 +60,8 @@ String event, Medal medal, LocalDate date, String other_sports```.
 - C2: Tiene un parámetro por cada propiedad del tipo.
 
 **Restricciones**
-- R1: la propiedad name no puede estar vacía
-- R2: la fecha debe estar comprendida entre el 14/5/1900 y la fecha actual.
+- R1: la propiedad name no puede estar vacía.
+- R2: la fecha debe estar comprendida entre el 1/1/1900 y 1/1/2017.
 
 **Criterio de igualdad**: Dos atletas son iguales si todas sus propiedades básicas son iguales.
 
@@ -72,4 +74,42 @@ String event, Medal medal, LocalDate date, String other_sports```.
 
 - Season, enumerado. Puede ser Summer o Winter.
 - Medal, enumerado. Puede ser Gold, Silver o Bronze.
-- Olimpiadas, record. Representa los datos de la olimpiadas ese año, concretamente la ciudad, el nombre de los juegos y el comité olímpico que los organiza.
+- Olimpiadas, record. Representa los datos de la olimpiadas ese año, concretamente la ciudad, el nombre de los juegos y las siglas del Comité 
+Olímpico que los organiza.
+
+### Factoría - FactoriaAtletas
+Clase de factoría para construir objetos de tipo Atletas.
+
+- _Atletas leerAtletas(String nombreFichero)_:Crea un objeto de tipo Atletas a partir de la información recogida en el archivo csv, cuya ruta se da como
+parámetro.
+
+### Tipo Contenedor - Atletas
+Clase contenedora de los objetos de tipo Atleta.
+
+**Propiedades**:
+
+-  _atletas_, de tipo _List\<Atleta\>_, consultable. Lista de atletas. 
+ 
+**Constructores**: 
+
+- C1: Constructor por defecto. Crea un objeto de tipo Atletas sin ningún atleta almacenado.
+- C2: Constructor con un parámetro de tipo Collection\<Atleta\>. Crea un objeto de tipo Atletas con los atletas incluidos en la colección dada como parámetro.
+- C3: Constructor con un parámetro de tipo Stream\<Atleta\>. Crea un objeto de tipo Atletas con los atletas incluidos en el Stream dado.
+
+**Criterio de igualdad**: Dos atletas son iguales si lo son sus propiedades atletas.
+
+
+**Otras operaciones**:
+- _Integer getNumeroAtletas()_: Devuelve el número de atletas del conjunto.
+- _void anadirAtleta(Atleta at)_: Añade un atleta al objeto.
+- _void anadirAtletas(Atleta ats)_: Añade una colección de atletas al objeto.
+- _void eliminaAtleta(Atleta at)_: Elimina un atleta.
+- _Boolean existeAtletaEdadAño(Integer edad, Integer year)_: Devuelve true o false dependiendo de si existe un atleta con las condiciones especificadas
+como parámetro.
+- _Integer getNumeroAtletasFecha(LocalDate f)_: Devuelve el número de atletas que participaron en la fecha dada como parámetro.
+- _Set<Atleta> getAtletasPesoEquipo(Double p, String t)_: Devuelve un conjunto de los atletas con los cuales coincide el peso y el equipo dados como 
+parámetros.
+- _Map<String, Set<Atleta>> getAtletasPorEquipo()_: Devuelve un map en el cual las claves son los equipos y los valores son conjuntos con los atletas 
+que pertenecen a ese equipo.
+- _Map<String, Long> getNumeroAtletasPorEquipo()_: Devuelve un map en el cual las claves son los equipos y los valores son el numero de atletas que 
+pertenecen a ese equipo.
