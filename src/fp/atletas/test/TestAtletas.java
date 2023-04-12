@@ -17,30 +17,30 @@ public class TestAtletas { //IMPORTANTE DESMARCAR LA OPCIÓN DE LÍMITE DE LA CO
 		Atletas atletas = FactoriaAtletas.leerAtletas("data/athlete_events.csv");
 		
 		System.out.println("\ntestGetNumeroAtletas");
-		System.out.println("====================");
+		System.out.println("--------------------");
 		testgetNumeroAtletas(atletas);
 		
 		System.out.println("\ntestExisteAtletaEdadAño");
-		System.out.println("=======================");
+		System.out.println("-----------------------");
 		testexisteAtletaEdadAño(atletas, 24, 2016);
 		testexisteAtletaEdadAño(atletas, 23, 1934);
 		
 		System.out.println("\ntestGetNumeroAtletasFecha");
-		System.out.println("=========================");
+		System.out.println("-------------------------");
 		testgetNumeroAtletasFecha(atletas, LocalDate.of(2016, 7, 5));
 		testgetNumeroAtletasFecha(atletas, LocalDate.of(1966, 4, 3));
 		
 		System.out.println("\ntestGetAtletasPesoEquipo");
-		System.out.println("========================");
+		System.out.println("------------------------");
 		testgetAtletasPesoEquipo(atletas, 64.0, "Norway");
 		testgetAtletasPesoEquipo(atletas, 0.0, "United States");
 		
 		System.out.println("\ntestGetAtletasPorEquipo"); 
-		System.out.println("=======================");
+		System.out.println("-----------------------");
 		testgetAtletasPorEquipo(atletas);
 		
 		System.out.println("\ntestGetNumeroAtletasPorEquipo");
-		System.out.println("=============================");
+		System.out.println("-----------------------------");
 		testgetNumeroAtletasPorEquipo(atletas);
 	}
 	
