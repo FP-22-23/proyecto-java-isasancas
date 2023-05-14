@@ -29,11 +29,20 @@ public class Atleta implements Comparable<Atleta> {
 	
 	//Propiedad derivada: obtener el Índice de Masa Corporal en función del peso y la altura.
 	/**
-	 * @return El Indice de Masa Corporal del atleta. Se calcula a partir de la altura y el peso.
+	 * @return devuelve el Indice de Masa Corporal del atleta. Se calcula a partir de la altura y el peso.
 	 */
 	public Double getIMC() {
 		Double res = getWeight()/((getHeight()/100)^2);
 		return res;
+	}
+	
+	//Función auxiliar utilizada en el método 9
+	/**
+	 * @return devuelve un string con el nombre del atleta y su IMC.
+	 */
+	public String getNameIMC() {
+		String nameIMC = name + " (" + getIMC() + ")";
+		return nameIMC;
 	}
 	
 	//Restricción 1

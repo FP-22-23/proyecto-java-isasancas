@@ -6,6 +6,7 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import fp.utiles.Medal;
@@ -21,10 +22,10 @@ public class FactoriaAtletas {
 	public static Atletas leerAtletas(String nombreFichero) { //Le paso el fichero
 		Atletas res=null;
 		try {
-			List<Atleta>  atletas=Files.lines(Paths.get(nombreFichero))
+			Set<Atleta>  atletas=Files.lines(Paths.get(nombreFichero))
 					.skip(1)
 					.map(FactoriaAtletas::parsearAtleta)
-					.collect(Collectors.toList());
+					.collect(Collectors.toSet());
 			
 			res=new Atletas(atletas);
 			} catch(IOException e) {

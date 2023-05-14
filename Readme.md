@@ -113,3 +113,13 @@ parámetros.
 que pertenecen a ese equipo.
 - _Map<String, Long> getNumeroAtletasPorEquipo()_: Devuelve un map en el cual las claves son los equipos y los valores son el numero de atletas que 
 pertenecen a ese equipo.
+- _Boolean existeAtletaEdadAñoStream(Integer edad, Integer year)_: Devuelve true o false dependiendo si existe un atleta con la edad especificada en el año especificado.
+- _Integer getNumeroAtletasFechaStream(LocalDate f)_: Devuelve el número de atletas que han competido en la fecha especificada por parámetro.
+- _Set<Atleta> getAtletasPesoEquipoStream(Double p, String t)_: Devuelve un conjunto en el cual aparecen los atletas en los que coinciden el peso y el equipo pasado por parametro.
+- _Atleta getAtletaMayorPesoEquipo(String t)_: Devuelve el atleta de mayor peso filtrado por equipo.
+- _SortedSet<String> getNombreAtletasEquipo(String t)_: Devuelve un conjunto ordenado de los nombres de los atletas ordenados alfabéticamente del equipo pasado por parámetro.
+- _Map<String, Set<Atleta>> getAtletasPorEquipoStream()_: Devuelve un map en el cual las claves son los equipos y los valores son conjuntos con los atletas que pertenecen a ese equipo.
+- _Map<String, Set<String>> getNombreAtletaPorEquipo()_: Devuelve un map que relaciona los equipos con el nombre de los atletas del equipo.
+- _Map<String, Atleta> getAtletaMejorIMCPorEquipo()_: Devuelve un map en el que las claves son los equipos y los valores el atleta con mayor IMC de ese equipo.
+- _SortedMap<String,List<String>> getNAtletasMayorIMCPorEquipo(Integer n)_: Devuelve un map en el que las claves son los equipos y los valores los n primeros atletas con mayor IMC.
+- _String getEquipoMaxIMC()_: Devuelve el equipo con el mayor IMC de un map en el que las claves son los equipos y los valores el mayor IMC entre todos los atletas de ese equipo.
