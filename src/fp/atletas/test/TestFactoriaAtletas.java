@@ -12,13 +12,15 @@ public class TestFactoriaAtletas {
 	}
 
 	private static void testLeerAtletas(String fichero) {
-		System.out.println("\nTestLeerAtletas =============");
+		System.out.println("\nTestLeerAtletas");
+		System.out.println("===============");
 		Atletas atletas = FactoriaAtletas.leerAtletas(fichero);
 		System.out.println("Atletas: "+ atletas);
 	}
 	
 	private static void testLeerAtletasStream(String fichero) {
-		System.out.println("\nTestLeerAtletas =============");
+		System.out.println("\nTestLeerAtletasStream");
+		System.out.println("=====================");
 		Atletas atletas = FactoriaAtletas.leerAtletasStream(fichero);
 		System.out.println("Atletas: "+ atletas);
 	}
