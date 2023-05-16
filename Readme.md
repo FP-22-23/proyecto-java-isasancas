@@ -80,8 +80,8 @@ Olímpico que los organiza.
 ### Factoría - FactoriaAtletas
 Clase de factoría para construir objetos de tipo Atletas.
 
-- _Atletas leerAtletas(String nombreFichero)_:Crea un objeto de tipo Atletas a partir de la información recogida en el archivo csv, cuya ruta se da como
-parámetro.
+- _Atletas leerAtletas(String nombreFichero)_:Crea un objeto de tipo Atletas a partir de la información recogida en el archivo csv, cuya ruta se da como parámetro.
+- _Atletas leerAtletasStream(String nombreFichero)_:Crea un objeto de tipo Atletas a partir de la información recogida en el archivo csv, cuya ruta se da como parámetro.
 
 ### Tipo Contenedor - Atletas
 Clase contenedora de los objetos de tipo Atleta.

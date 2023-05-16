@@ -8,6 +8,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import fp.utiles.Medal;
 import fp.utiles.Olimpiadas;
@@ -15,17 +16,36 @@ import fp.utiles.Season;
 
 public class FactoriaAtletas {
 	
-	/**
-	 * @param nombreFichero Nombre del fichero con datos de atletas.
-	 * Devuelve un objeto de tipo Atletas con los datos del fichero.
-	 */
-	public static Atletas leerAtletas(String nombreFichero) { //Le paso el fichero
+	public static Atletas leerAtletas(String nombreFichero) {
+		/**
+		 * @param nombreFichero Nombre del fichero con datos de atletas.
+		 * Devuelve un objeto de tipo Atletas con los datos del fichero.
+		 */
 		Atletas res=null;
 		try {
 			Set<Atleta>  atletas=Files.lines(Paths.get(nombreFichero))
 					.skip(1)
 					.map(FactoriaAtletas::parsearAtleta)
 					.collect(Collectors.toSet());
+			
+			res=new Atletas(atletas);
+			} catch(IOException e) {
+			System.out.println("Fichero no encontrado: "+ nombreFichero);
+			e.printStackTrace();
+		}
+	return res;
+	}
+	
+	public static Atletas leerAtletasStream(String nombreFichero) {
+		/**
+		 * @param nombreFichero Nombre del fichero con datos de atletas.
+		 * Devuelve un objeto de tipo Atletas con los datos del fichero.
+		 */
+		Atletas res=null;
+		try {
+			Stream<Atleta>  atletas=Files.lines(Paths.get(nombreFichero))
+					.skip(1)
+					.map(FactoriaAtletas::parsearAtleta);
 			
 			res=new Atletas(atletas);
 			} catch(IOException e) {
